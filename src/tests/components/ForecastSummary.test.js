@@ -12,7 +12,6 @@ describe("ForecastSummary", () => {
       max: 22,
     },
   };
-
   it("renders correctly", () => {
     const { asFragment } = render(
       <ForecastSummary

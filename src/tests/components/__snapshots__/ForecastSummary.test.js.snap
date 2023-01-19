@@ -3,7 +3,7 @@
 exports[`ForecastSummary renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="forecast_summary"
+    class="forecast-summary"
   >
     <div
       class="forecast-summary__date"
