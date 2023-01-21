@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import ForecastSummary from "../../components/ForecastSummary";
 
 describe("ForecastSummary", () => {
@@ -11,6 +11,7 @@ describe("ForecastSummary", () => {
       min: 4,
       max: 11,
     },
+    onSelect: jest.fn(),
   };
 
   it("renders correctly", () => {
@@ -20,19 +21,21 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("it renders correct values for props", () => {
+  it("renders correct values for props", () => {
     const { getByText, getByTestId } = render(
       <ForecastSummary
         date={validProps.date}
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
 
@@ -49,5 +52,19 @@ describe("ForecastSummary", () => {
       "class",
       "forecast-summary__temperature"
     );
+  });
+
+  it("when the button is licked, onSelect is called", () => {
+    const { getByRole } = render(
+      <ForecastSummary
+        date={validProps.date}
+        description={validProps.description}
+        icon={validProps.icon}
+        temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
+      />
+    );
+    fireEvent.click(screen.getByRole("button"));
+    expect(validProps.onSelect).toHaveBeenCalled();
   });
 });
