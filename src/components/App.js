@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "../styles/App.css";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 import getForecast from "../requests/getForecast";
-// import axios from "axios";
-const axios = require("../../node_modules/axios/dist/node/axios.cjs");
+import SearchForm from "./SearchForm";
+import "../styles/App.css";
 
 const App = () => {
   const [location, setLocation] = useState({ city: "", country: "" });
+  const [searchText, setSearchText] = useState("");
   const [forecasts, setForecasts] = useState([]);
   const [selectedDate, setSelectedDate] = useState(0);
 
@@ -17,6 +17,10 @@ const App = () => {
   );
   const handleForecastSelect = (date) => setSelectedDate(date);
 
+  const handleCitySearch = () => {
+    getForecast(searchText, setSelectedDate, setLocation, setForecasts);
+  };
+
   useEffect(() => {
     getForecast(setSelectedDate, setLocation, setForecasts);
   }, []);
@@ -24,6 +28,11 @@ const App = () => {
   return (
     <div className="weather-app">
       <LocationDetails city={location.city} country={location.country} />
+      <SearchForm
+        searchText={searchText}
+        setSearchText={setSearchText}
+        onSubmit={handleCitySearch}
+      />
       <ForecastSummaries
         forecasts={forecasts}
         onForecastSelect={handleForecastSelect}

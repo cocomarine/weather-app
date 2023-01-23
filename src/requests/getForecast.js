@@ -1,9 +1,16 @@
-import React from "react";
-// import axios from "axios";
-const axios = require("../../node_modules/axios/dist/node/axios.cjs");
+import axios from "axios";
 
-const getForecast = (setSelectedDate, setLocation, setForecasts) => {
-  const endpoint = "https://mcr-codes-weather-app.herokuapp.com/forecast";
+const getForecast = (
+  searchText,
+  setSelectedDate,
+  setLocation,
+  setForecasts
+) => {
+  let endpoint = "https://cmd-shift-weather-app.onrender.com/forecast";
+
+  if (searchText) {
+    endpoint += `?city=${searchText}`;
+  }
 
   axios.get(endpoint).then((response) => {
     setSelectedDate(response.data.forecasts[0].date);
