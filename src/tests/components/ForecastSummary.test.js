@@ -54,7 +54,7 @@ describe("ForecastSummary", () => {
     );
   });
 
-  it("when the button is licked, onSelect is called", () => {
+  it("when the button is clicked, onSelect is called", () => {
     const { getByRole } = render(
       <ForecastSummary
         date={validProps.date}
@@ -64,6 +64,7 @@ describe("ForecastSummary", () => {
         onSelect={validProps.onSelect}
       />
     );
+
     fireEvent.click(screen.getByRole("button"));
     expect(validProps.onSelect).toHaveBeenCalled();
   });
