@@ -28,7 +28,14 @@ exports[`ForecastDetails renders correctly 1`] = `
     <div
       class="forecast-details__wind"
     >
-      wind: 13mph s
+      <span
+        class="forecast-details__wind--speed"
+      >
+        wind: 13mph 
+      </span>
+      <span
+        class="forecast-details__wind--direction wi wi-wind wi-from-s"
+      />
     </div>
   </div>
 </DocumentFragment>

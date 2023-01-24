@@ -10,9 +10,10 @@ const SearchForm = ({ searchText, setSearchText, onSubmit }) => {
     <div className="search-form">
       <input
         type="text"
+        placeholder="city name"
         onChange={handleInputChange}
         value={searchText}
-        data-testid="search-input"
+        data-testid="search-form__input"
       />
       <button type="submit" onClick={onSubmit}>
         Search

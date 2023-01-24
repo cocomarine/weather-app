@@ -30,7 +30,7 @@ describe("SearchForm", () => {
       />
     );
 
-    expect(getByTestId("search-input")).toHaveValue("Manchester");
+    expect(getByTestId("search-form__input")).toHaveValue("Manchester");
   });
 
   // it("when search text is typed, setSearchText is called")

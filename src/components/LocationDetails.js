@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 const LocationDetails = (props) => {
   const { city, country, errorMessage } = props;
   return errorMessage ? (
-    <h1>{errorMessage}</h1>
+    <h2>{errorMessage}</h2>
   ) : (
-    <h1 className="location">{`${city}, ${country}`}</h1>
+    <h2 className="location">{`${city}, ${country}`}</h2>
   );
 };
 

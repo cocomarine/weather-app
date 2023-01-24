@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/weather-icons-wind.css";
 
 const ForecastDetails = ({ forecast }) => {
   const { date, temperature, humidity, wind } = forecast;
@@ -11,8 +12,17 @@ const ForecastDetails = ({ forecast }) => {
         <div>Max Temperature: {temperature.max}&deg;C</div>
         <div>Min Temperature: {temperature.min}&deg;C</div>
       </div>
-      <div className="forecast-details__humidity">humidity: {humidity}&#37;</div>
-      <div className="forecast-details__wind">wind: {wind.speed}mph {wind.direction}</div>
+      <div className="forecast-details__humidity">
+        humidity: {humidity}&#37;
+      </div>
+      <div className="forecast-details__wind">
+        <span className="forecast-details__wind--speed">
+          wind: {wind.speed}mph&nbsp;
+        </span>
+        <span
+          className={`forecast-details__wind--direction wi wi-wind wi-from-${wind.direction}`}
+        />
+      </div>
     </div>
   );
 };

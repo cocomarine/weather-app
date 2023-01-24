@@ -26,6 +26,7 @@ const App = () => {
       setForecasts,
       setErrorMessage
     );
+    setSearchText("");
   };
 
   useEffect(() => {
@@ -40,15 +41,15 @@ const App = () => {
 
   return (
     <div className="weather-app">
-      <LocationDetails
-        city={location.city}
-        country={location.country}
-        errorMessage={errorMessage}
-      />
       <SearchForm
         searchText={searchText}
         setSearchText={setSearchText}
         onSubmit={handleCitySearch}
+      />
+      <LocationDetails
+        city={location.city}
+        country={location.country}
+        errorMessage={errorMessage}
       />
       {!errorMessage && (
         <>
