@@ -8,7 +8,7 @@ exports[`ForecastDetails renders correctly 1`] = `
     <div
       class="forecast-details__date"
     >
-      Mon Apr 30 2018
+      Mon Apr 30
     </div>
     <div
       class="forecast-details__temperature"

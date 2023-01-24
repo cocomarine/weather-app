@@ -1,15 +1,18 @@
 .weather-app {
-  margin: 0 20px;
-  background-image: url('../../images/daytime_sky.jpg');
-  background-repeat: no repeat;
-  background-size: cover;
-  background-position: center top;
+  padding: 2rem;
+  width: 50rem;
+  min-height: 80vh;
+  margin: 2rem auto;
+  border-radius: 5rem;
   text-align: center;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
   font-size: calc(8px + 1.5vmin);
+  background: rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 10px 0px;
   color: black;
 }

@@ -1,0 +1,18 @@
+.forecast-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.forecast-summary__icon {
+  padding-top: 15px;
+  font-size: 7vh;
+}
+
+.forecast-summary__button {
+  margin-top: 15px;
+}
