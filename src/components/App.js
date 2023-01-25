@@ -3,8 +3,11 @@ import React, { useEffect, useState } from "react";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
-import getForecast from "../requests/getForecast";
 import SearchForm from "./SearchForm";
+import ToggleTheme from "./ToggleTheme";
+import getForecast from "../requests/getForecast";
+import { useTheme } from "../context/ThemeProvider";
+
 import "../styles/App.css";
 
 const App = () => {
@@ -13,6 +16,7 @@ const App = () => {
   const [forecasts, setForecasts] = useState([]);
   const [selectedDate, setSelectedDate] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
+  const { darkTheme } = useTheme();
 
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
@@ -41,7 +45,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="weather-app">
+    <div className={`weather-app ${darkTheme ? "dark" : "light"}`}>
       <SearchForm
         searchText={searchText}
         setSearchText={setSearchText}
@@ -61,6 +65,7 @@ const App = () => {
           {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
         </>
       )}
+      <ToggleTheme />
     </div>
   );
 };
