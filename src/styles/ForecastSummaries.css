@@ -1,4 +1,12 @@
 .forecast-summaries {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+  .forecast-summaries {
+  flex-direction: row;
+  }
 }
