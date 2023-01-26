@@ -1,5 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import ForecastSummaries from "../../components/ForecastSummaries";
 
 describe("ForecastSummaries", () => {
@@ -8,7 +9,7 @@ describe("ForecastSummaries", () => {
       {
         date: 1525046400000,
         description: "Stub description",
-        icon: 800,
+        icon: "800",
         temperature: {
           min: 4,
           max: 11,
@@ -17,33 +18,33 @@ describe("ForecastSummaries", () => {
       {
         date: 1525132800000,
         description: "Stub description2",
-        icon: 211,
+        icon: "211",
         temperature: {
           min: 8,
           max: 13,
         },
       },
     ],
-    onForecastSelect: () => {},
+    onForecastSelect: jest.fn(),
   };
 
   it("renders correctly", () => {
-    const { asFragment } = render(
+    const rendered = renderer.create(
       <ForecastSummaries
         forecasts={validProps.forecasts}
         onForecastSelect={validProps.onForecastSelect}
       />
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(rendered).toMatchSnapshot();
   });
 
   it("renders the correct number of ForecastSummary instances", () => {
-    const { getAllByTestId } = render(
+    render(
       <ForecastSummaries
         forecasts={validProps.forecasts}
         onForecastSelect={validProps.onForecastSelect}
       />
     );
-    expect(getAllByTestId("forecast-summary")).toHaveLength(2);
+    expect(screen.getAllByTestId("forecast-summary")).toHaveLength(2);
   });
 });

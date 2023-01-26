@@ -1,15 +1,15 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import App from "../../components/App";
 import { ThemeProvider } from "../../context/ThemeProvider";
 
 describe("App", () => {
   it("renders App correctly", () => {
-    const { asFragment } = render(
+    const rendered = renderer.create(
       <ThemeProvider>
         <App />
       </ThemeProvider>
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(rendered).toMatchSnapshot();
   });
 });

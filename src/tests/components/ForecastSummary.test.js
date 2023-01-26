@@ -1,71 +1,69 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import ForecastSummary from "../../components/ForecastSummary";
 
 describe("ForecastSummary", () => {
   const validProps = {
-    date: 1525046400000,
-    description: "Stub description",
-    icon: "800",
-    temperature: {
-      min: 4,
-      max: 11,
+    forecast: {
+      date: 1525046400000,
+      description: "Stub description",
+      icon: "800",
+      temperature: {
+        min: 4,
+        max: 11,
+      },
     },
     onSelect: jest.fn(),
   };
 
   it("renders correctly", () => {
-    const { asFragment } = render(
+    const rendered = renderer.create(
       <ForecastSummary
-        date={validProps.date}
-        description={validProps.description}
-        icon={validProps.icon}
-        temperature={validProps.temperature}
+        forecast={validProps.forecast}
         onSelect={validProps.onSelect}
       />
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(rendered).toMatchSnapshot();
   });
 
   it("renders correct values for props", () => {
-    const { getByText, getByTestId } = render(
+    render(
       <ForecastSummary
-        date={validProps.date}
-        description={validProps.description}
-        icon={validProps.icon}
-        temperature={validProps.temperature}
+        forecast={validProps.forecast}
         onSelect={validProps.onSelect}
       />
     );
 
-    expect(getByText("Mon Apr 30")).toHaveAttribute(
+    expect(screen.getByText("Mon Apr 30")).toHaveAttribute(
       "class",
       "forecast-summary__date"
     );
-    expect(getByText("Stub description")).toHaveAttribute(
+    expect(screen.getByText("Stub description")).toHaveAttribute(
       "class",
       "forecast-summary__description"
     );
-    expect(getByTestId("forecast-icon")).toHaveClass("forecast-summary__icon");
-    expect(getByText("11°C")).toHaveAttribute(
+    expect(screen.getByTestId("forecast-icon")).toHaveClass(
+      "forecast-summary__icon"
+    );
+    expect(screen.getByText("11°C")).toHaveAttribute(
       "class",
       "forecast-summary__temperature"
     );
   });
 
-  it("when the button is clicked, onSelect is called", () => {
-    const { getByRole } = render(
+  it("clicking forecast calls correct function", () => {
+    render(
       <ForecastSummary
-        date={validProps.date}
-        description={validProps.description}
-        icon={validProps.icon}
-        temperature={validProps.temperature}
+        forecast={validProps.forecast}
         onSelect={validProps.onSelect}
       />
     );
 
     fireEvent.click(screen.getByRole("button"));
     expect(validProps.onSelect).toHaveBeenCalled();
+    expect(validProps.onSelect).toHaveBeenCalledTimes(1);
+    expect(validProps.onSelect).toHaveBeenCalledWith(validProps.forecast.date);
   });
 });

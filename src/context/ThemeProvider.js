@@ -2,16 +2,16 @@
 import React, { createContext, useContext, useState } from "react";
 import PropTypes from "prop-types";
 
-const ThemeConext = createContext();
+const ThemeContext = createContext();
 
-export const useTheme = () => useContext(ThemeConext);
+export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState(false);
   return (
-    <ThemeConext.Provider value={{ darkTheme, setDarkTheme }}>
+    <ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
       {children}
-    </ThemeConext.Provider>
+    </ThemeContext.Provider>
   );
 };
 ThemeProvider.propTypes = {

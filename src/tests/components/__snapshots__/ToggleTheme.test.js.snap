@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleTheme renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="toggle-container"
+  >
+    <input
+      id="switch"
+      type="checkbox"
+    />
+    <label
+      for="switch"
+    >
+      ToggleTheme
+    </label>
+  </div>
+</DocumentFragment>
+`;
