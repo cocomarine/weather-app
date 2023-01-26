@@ -12,10 +12,10 @@ const ToggleTheme = () => {
   };
 
   return (
-    <>
+    <div className="toggle-container">
       <input type="checkbox" id="switch" onClick={toggleHandler} />
       <label htmlFor="switch">ToggleTheme</label>
-    </>
+    </div>
   );
 };
 

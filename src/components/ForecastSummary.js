@@ -10,7 +10,13 @@ const ForecastSummary = (props) => {
   const yearRemovedDate = removeYear(date);
 
   return (
-    <div className="forecast-summary" data-testid="forecast-summary">
+    <div
+      role="button"
+      tabIndex={0}
+      className="forecast-summary"
+      data-testid="forecast-summary"
+      onClick={() => onSelect(date)}
+    >
       <div className="forecast-summary__date">{yearRemovedDate}</div>
       <div className="forecast-summary__icon" data-testid="forecast-icon">
         <WeatherIcon name="owm" iconId={icon} />
@@ -19,13 +25,13 @@ const ForecastSummary = (props) => {
         {temperature.max}&deg;C
       </div>
       <div className="forecast-summary__description">{description}</div>
-      <button
+      {/* <button
         type="button"
         className="forecast-summary__button"
         onClick={() => onSelect(date)}
       >
         More details
-      </button>
+      </button> */}
     </div>
   );
 };

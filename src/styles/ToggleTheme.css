@@ -9,7 +9,7 @@ label {
 	text-indent: -9999px;
 	width: 60px;
 	height: 36px;
-	background: rgb(163, 163, 163);
+	background: rgb(100, 173, 189);
 	display: block;
 	border-radius: 50px;
 	position: relative;
@@ -18,7 +18,7 @@ label {
 label:after {
 	content: '';
 	position: absolute;
-	top: 4px;
+	top: 4.5px;
 	left: 3px;
 	width: 28px;
 	height: 28px;
