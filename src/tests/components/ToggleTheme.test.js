@@ -1,15 +1,15 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import ToggleTheme from "../../components/ToggleTheme";
 import { ThemeProvider } from "../../context/ThemeProvider";
 
 describe("ToggleTheme", () => {
   it("renders correctly", () => {
-    const { asFragment } = render(
+    const rendered = renderer.create(
       <ThemeProvider>
         <ToggleTheme />
       </ThemeProvider>
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(rendered).toMatchSnapshot();
   });
 });

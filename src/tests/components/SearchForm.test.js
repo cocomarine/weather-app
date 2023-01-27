@@ -1,16 +1,17 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import SearchForm from "../../components/SearchForm";
 
 describe("SearchForm", () => {
   const validProps = {
-    searchText: "Manchester",
+    searchText: "Test city",
     setSearchText: jest.fn(),
     onSubmit: jest.fn(),
   };
 
   it("renders correctly", () => {
-    const { asFragment } = render(
+    const rendered = renderer.create(
       <SearchForm
         searchText={validProps.searchText}
         setSearchText={validProps.setSearchText}
@@ -18,11 +19,11 @@ describe("SearchForm", () => {
       />
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(rendered).toMatchSnapshot();
   });
 
   it("renders correct text", () => {
-    const { getByTestId } = render(
+    render(
       <SearchForm
         searchText={validProps.searchText}
         setSearchText={validProps.setSearchText}
@@ -30,13 +31,11 @@ describe("SearchForm", () => {
       />
     );
 
-    expect(getByTestId("search-form__input")).toHaveValue("Manchester");
+    expect(screen.getByTestId("search-form__input")).toHaveValue("Test city");
   });
 
-  // it("when search text is typed, setSearchText is called")
-
   it("when search button is clicked, onSubmit is called", () => {
-    const { getByRole } = render(
+    render(
       <SearchForm
         searchText={validProps.searchText}
         setSearchText={validProps.setSearchText}

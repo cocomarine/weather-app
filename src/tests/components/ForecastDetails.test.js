@@ -1,5 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import ForecastDetails from "../../components/ForecastDetails";
 
 describe("ForecastDetails", () => {
@@ -19,10 +20,10 @@ describe("ForecastDetails", () => {
   };
 
   it("renders correctly", () => {
-    const { asFragment } = render(
+    const rendered = renderer.create(
       <ForecastDetails forecast={validProps.forecast} />
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(rendered).toMatchSnapshot();
   });
 });

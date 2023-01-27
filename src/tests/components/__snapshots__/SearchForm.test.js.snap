@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchForm renders correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="search-form"
+<div
+  className="search-form"
+>
+  <input
+    data-testid="search-form__input"
+    onChange={[Function]}
+    placeholder="city name"
+    type="text"
+    value="Test city"
+  />
+  <button
+    onClick={[MockFunction]}
+    type="submit"
   >
-    <input
-      data-testid="search-form__input"
-      placeholder="city name"
-      type="text"
-      value="Manchester"
-    />
-    <button
-      type="submit"
-    >
-      Search
-    </button>
-  </div>
-</DocumentFragment>
+    Search
+  </button>
+</div>
 `;
