@@ -42,9 +42,9 @@ Start by typing the name of a UK city in the search box and click 'search'. This
 
 ## To do
 If I have more time, I would like to add these:
--Making the app more responsive across different devices
--Improving UI for the detailed forecast of a specific day and theme toggle button
--Adding functionality of showing a UK map with the city location marked
+- Making the app more responsive across different devices
+- Improving UI for the detailed forecast of a specific day and theme toggle button
+- Adding functionality of showing a UK map with the city location marked
 
 ------------------
 
