@@ -40,9 +40,9 @@ This is my first frontend project created by bootstratpping with [Create React A
 ## Using the app
 Start by typing the name of a UK city in the search box and click 'search'. This will render the summaries of 5 day weather forecasts for that city. Hoover over and press any of the forecast to get more detailed forecasts including max and min temperatures, humidity and wind speed and direction. If the searched city is not found or wrong name is input, an error message is displayed. Use the toggle button to switch between light and dark mode. 
 
-## To do
+## Future work
 If I have more time, I would like to add these:
-- Making the app more responsive across different devices
+- Making the app responsive to many different devices
 - Improving UI for the detailed forecast of a specific day and theme toggle button
 - Adding functionality of showing a UK map with the city location marked
 
