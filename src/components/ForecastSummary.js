@@ -26,13 +26,6 @@ const ForecastSummary = ({ forecast, onSelect }) => {
         {temperature.max}&deg;C
       </div>
       <div className="forecast-summary__description">{description}</div>
-      {/* <button
-        type="button"
-        className="forecast-summary__button"
-        onClick={() => onSelect(date)}
-      >
-        More details
-      </button> */}
     </div>
   );
 };
