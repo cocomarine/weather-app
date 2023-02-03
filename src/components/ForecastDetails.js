@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { removeYear } from "../module/formatDate";
 
 import "../styles/weather-icons-wind.css";
-import "../styles/ForecastDetails.css";
+import "../styles/forecast-details.css";
 
 const ForecastDetails = ({ forecast }) => {
   const { date, temperature, humidity, wind } = forecast;

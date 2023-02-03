@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import WeatherIcon from "react-icons-weather";
 import { removeYear } from "../module/formatDate";
 
-import "../styles/ForecastSummary.css";
+import "../styles/forecast-summary.css";
 
 const ForecastSummary = ({ forecast, onSelect }) => {
   const { date, description, icon, temperature } = forecast;

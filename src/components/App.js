@@ -8,7 +8,7 @@ import ToggleTheme from "./ToggleTheme";
 import getForecast from "../requests/getForecast";
 import { useTheme } from "../context/ThemeProvider";
 
-import "../styles/App.css";
+import "../styles/app.css";
 
 const App = () => {
   const [location, setLocation] = useState({ city: "", country: "" });

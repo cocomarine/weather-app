@@ -22,6 +22,7 @@ describe("LocationDetails", () => {
     );
 
     const locationDetails = screen.getByText("Test city, Test country");
+
     expect(locationDetails).toBeInTheDocument();
     expect(locationDetails).toBeInstanceOf(HTMLHeadingElement);
   });
