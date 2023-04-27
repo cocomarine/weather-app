@@ -13,7 +13,8 @@ A weather app created by using React and tested using React Testing Library.
 ## Introduction
 
 This is my first frontend project created by bootstratpping with [Create React App](https://github.com/facebook/create-react-app) with testing carried out using React Testing Library. The app shows the 5 days of forecast summaries for a UK city with more details of a particular day's forecast being displayed. The app also is displayed in a light or dart theme mode. 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=LXJBPxeLS2Q" target="_blank">
+
+<a href="https://youtu.be/LXJBPxeLS2Q" target="_blank">
  <figcaption>Demo video</figcaption>
 </a>
 <br></br>
