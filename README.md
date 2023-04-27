@@ -13,6 +13,10 @@ A weather app created by using React and tested using React Testing Library.
 ## Introduction
 
 This is my first frontend project created by bootstratpping with [Create React App](https://github.com/facebook/create-react-app) with testing carried out using React Testing Library. The app shows the 5 days of forecast summaries for a UK city with more details of a particular day's forecast being displayed. The app also is displayed in a light or dart theme mode. 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=LXJBPxeLS2Q" target="_blank">
+ <figcaption>Demo video</figcaption>
+</a>
+<br></br>
 
 <img src="images/weather_app_screens.jpg" width="400" height="325" alt="Mobile screenshots of app in light and dark mode side by side" title="App on mobile screen in light and dark mode"/>
 <img src="images/weather_app_light_full.jpg" width="400" height="325" alt="Computer screenshot of app in light mode" title="App on computer screen in light mode" />
@@ -24,6 +28,7 @@ This is my first frontend project created by bootstratpping with [Create React A
 - Props to pass data between React components
 - State to allow components to create and manage their own data
 - React Hooks to create state in components and configure how they are then updated
+- Using React Context to build a custom provider for light/dark theme
 - Comparison between React Hooks and classes
 - React Testing Library (RTL) to test UI 
 - Rendering components with virtual DOM for abstracting away manual DOM manipulations during testing
